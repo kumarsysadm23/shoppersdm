@@ -1,1 +1,21 @@
-my project details
+pipeline{
+    agent any 
+    stages{
+        stage('checkout'){
+            steps{
+                git 'merge'
+            }
+            steps{
+                https://github.com/kumarsysadm23/shoppersdm.git
+            }
+        }
+        stage('build'){
+            tools{
+                maven 'maven-3.6'
+            }
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
